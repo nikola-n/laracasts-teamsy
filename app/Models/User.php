@@ -20,6 +20,7 @@ class User extends Authenticatable implements \Illuminate\Contracts\Auth\Authent
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
