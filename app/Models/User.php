@@ -16,12 +16,7 @@ class User extends Authenticatable implements \Illuminate\Contracts\Auth\Authent
      *
      * @var array
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'role',
-    ];
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for arrays.

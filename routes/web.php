@@ -47,10 +47,15 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+    Route::view('/team', 'team')->name('team.index');
+    Route::view('/team/add-user', 'users.create')->name('users.create');
+
     Route::get('email/verify/{id}/{hash}', EmailVerificationController::class)
         ->middleware('signed')
         ->name('verification.verify');
 
-    Route::post('logout', LogoutController::class)
+    Route::view('password/confirm', 'auth.passwords.confirm')->name('password.confirm');
+
+    Route::get('logout', LogoutController::class)
         ->name('logout');
 });
